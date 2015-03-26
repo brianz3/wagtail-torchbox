@@ -12,12 +12,12 @@
             {% elif child.block_type == 'intro' %}
                 <div class="intro drop-cap">{{ child }}</div>
             {% elif child.block_type == 'pullquote' %}
-                <blockquote class="pull-quote">
+                <blockquote class="pull-quote clearfix">
                     <p>{{ child.value.quote }}</p>
                     <cite> – {{ child.value.attribution }}</cite>
                 </blockquote>
             {% elif child.block_type == 'testimonial' %}
-                <blockquote class="pull-quote">
+                <blockquote class="pull-quote clearfix">
                     <p>{{ child.value.quote }}</p>
                     <cite> – {{ child.value.attribution }}</cite>
                 </div>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             {% elif child.block_type == 'aligned_image' %}
-                <div class="{% if child.value.alignment == "left" or child.value.alignment == "right" %}align-{{ child.value.alignment }}{% else %}{{ child.value.alignment }}-width{% endif %}">
+                <div class="{% if child.value.alignment == "left" or child.value.alignment == "right" %}align-{{ child.value.alignment }}{% else %}{{ child.value.alignment }}-width clearfix{% endif %}">
                     <div class="img-holder">
                         {% if child.value.alignment == "left" or child.value.alignment == "right" %}
                             {% image child.value.image width-400 as blockimage %}
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             {% elif child.block_type == 'raw_html' %}
-                {{ child.value|safe }}
+                <div class="html clearfix">{{ child.value|safe }}</div>
             {% else %}
                 {{ child }}
             {% endif %}

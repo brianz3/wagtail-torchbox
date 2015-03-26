@@ -2492,8 +2492,6 @@ footer .tel {
     STREAM FIELD STYLES
    ========================================================================== */
 
-
-
 .stream-field .bustout,
 .stream-field .pull-quote,
 .stream-field .full-width{
@@ -2515,7 +2513,7 @@ footer .tel {
 .bustout {
     background: #434a4f;
     color: #fff;
-    margin: 0;
+    margin: 3em 0;
     padding: 0;
 }
     .bustout-text {
@@ -2534,6 +2532,7 @@ footer .tel {
         }
 
 .pull-quote {
+    margin:2em 0;
     padding: 2em 1em;
     font-size: 1.3em;
     text-align: center;
@@ -2729,7 +2728,7 @@ h4 ~ .stat {
 
 .html {
     max-width: 900px;
-    margin: 0 auto 2em auto;
+    margin: 2em auto;
     text-align: center;
 }
 
