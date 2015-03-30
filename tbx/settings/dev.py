@@ -34,13 +34,8 @@ LOGGING = {
     }
 }
 
-<<<<<<< HEAD
 try:
     from .local import *
 except ImportError:
     pass
 
-=======
-#COMPRESS_OFFLINE = False
-#COMPRESS_ENABLED = False
->>>>>>> play-styles
