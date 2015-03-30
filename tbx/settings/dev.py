@@ -1,7 +1,6 @@
 from .base import *
 
 DEBUG = True
-ALLOWED_HOSTS = ['localhost']
 ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -35,8 +34,13 @@ LOGGING = {
     }
 }
 
+<<<<<<< HEAD
 try:
     from .local import *
 except ImportError:
     pass
 
+=======
+#COMPRESS_OFFLINE = False
+#COMPRESS_ENABLED = False
+>>>>>>> play-styles
