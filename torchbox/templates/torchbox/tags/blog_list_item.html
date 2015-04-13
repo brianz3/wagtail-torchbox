@@ -32,7 +32,13 @@
                 {% endif %}
 
                 <div id="author" class="author clearfix" >
+
                     {% if post.related_author.all %}
+                        {% if post.related_author.all.length > 1 %}
+                            {% comment %}multiple authors{% endcomment %}
+                        {% else %}
+                            {% comment %} just one author{% endcomment %}
+                        {% endif %}
                         {% for author in post.related_author.all %}
                             {% if author.author.image %}
                                 {% image author.author.image fill-300x300 as photo %}
