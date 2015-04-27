@@ -11,10 +11,12 @@ WAGTAILSEARCH_BACKENDS = {
 }
 
 
-INSTALLED_APPS+= (
+INSTALLED_APPS += (
     'djcelery',
     'kombu.transport.django',
-    'gunicorn',    
+    'gunicorn',
+
+    'wagtail.contrib.wagtailfrontendcache',
 )
 
 
@@ -48,7 +50,11 @@ CELERY_SEND_TASK_ERROR_EMAILS = True
 CELERYD_LOG_COLOR = False
 
 
+# Facebook JSSDK app Id
+FB_APP_ID = '323944607389'
+
+
 try:
-	from .local import *
+    from .local import *
 except ImportError:
-	pass
+    pass

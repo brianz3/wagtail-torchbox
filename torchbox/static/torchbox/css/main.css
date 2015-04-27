@@ -1966,6 +1966,11 @@ main .breadcrumb a:hover {
     margin-left: -16px;
 }
 
+.author-holder {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
 
 .author {
     padding: 0em 0em;
@@ -2504,7 +2509,7 @@ footer .tel {
     font-size: 3.4em;
     line-height: 0.1em;
     margin-right: 0.1em;
-    padding-top: 0.23em;
+    padding-top: 0.13em;
     font-family: "adelle",serif;
     font-style: normal;
     font-weight: 800;
