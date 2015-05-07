@@ -2855,7 +2855,7 @@ h4 ~ .stat {
 }
 
 .page-formpage .logo {
-    background-image: url("/static/torchbox/images/logo-torchbox-white.png");
+    background-image: url("../images/logo-torchbox-white.png");
 }
 
 input {
@@ -2886,7 +2886,7 @@ input {
 
 /* contact us landing */
 .thank-you-header {
-    background: url("/static/torchbox/images/bristol-office.jpg") center center no-repeat;
+    background: url("../images/bristol-office.jpg") center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
