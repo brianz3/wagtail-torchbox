@@ -28,7 +28,7 @@
         margin-right:auto;
     }
 
-   
+
 
     .page-homepage .hero h1 {
         text-align: center;
@@ -176,5 +176,10 @@
         width: 45%;
         float: left;
         margin-right: 4%;
+    }
+
+    .contact-form {
+        width: 35em;
+        clear: left;
     }
 }
