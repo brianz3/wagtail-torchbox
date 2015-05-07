@@ -122,6 +122,7 @@ from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'torchbox.context_processors.fb_app_id',
+    'torchbox.context_processors.contact_form',
 )
 
 ROOT_URLCONF = 'tbx.urls'
@@ -159,6 +160,7 @@ INSTALLED_APPS = (
     'wagtail.wagtailsearch',
     'wagtail.wagtailredirects',
     'wagtail.contrib.wagtailfrontendcache',
+    'wagtail.wagtailforms',
 
     'torchbox',
 )
@@ -222,4 +224,3 @@ WAGTAILIMAGES_IMAGE_MODEL = 'torchbox.TorchboxImage'
 
 # Facebook JSSDK app Id
 FB_APP_ID = ''
-

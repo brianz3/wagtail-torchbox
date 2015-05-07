@@ -78,7 +78,7 @@ $(function() {
     $('.pick').each(function(){
         var $stickyEl = $('.pick');
         var elTop = $stickyEl.length && $stickyEl.offset().top - 4;
-        
+
         $stickyEl.toggleClass('fixed', $window.scrollTop() > elTop);
 
         $window.scroll(function() {
@@ -89,7 +89,7 @@ $(function() {
     $('.nextprev').each(function(){
         var $stickyEl = $('.nextprev');
         var elTop = $stickyEl.length && $stickyEl.offset().top - 10;
-        
+
         $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
 
         $window.scroll(function() {
@@ -99,7 +99,7 @@ $(function() {
 
     // fitVids
     $('.responsive-object').fitVids();
-    
+
     // get some stats about the video
     $('.responsive-object').each(function() {
         var $this = $(this);
@@ -110,7 +110,7 @@ $(function() {
             player.api('play');
         });
 
-        player.addEvent('ready', function() {  
+        player.addEvent('ready', function() {
             player.addEvent('play', function(id){
                 $('.play').hide();
                 $('.breakpoint-medium header, .breakpoint-medium .hero-video h1').animate({
@@ -118,13 +118,13 @@ $(function() {
                 }, 500, function() {});
                 $('.poster').fadeOut(300);
                 ga('send', 'event', 'video', 'played', id);
-            }); 
+            });
             player.addEvent('pause', function(id){
                 $('header').animate({
                     opacity: 1,
                 }, 500, function() {});
                 ga('send', 'event', 'video', 'paused', id);
-            });     
+            });
             player.addEvent('finish', function(id){
                  $('header').animate({
                     opacity: 1,
@@ -134,7 +134,36 @@ $(function() {
             });
         });
     });
-    
+
     //featherlight used for lightboxes in streamfield-enabled pages
     $('.gallery').featherlightGallery();
+
+    // Animate contact form in footer
+    $('.contact-form').hide();
+    $('.footerbleed a[href^="/contact"]').click(function(e) {
+        e.preventDefault();
+        $('.contact-form').slideToggle();
+    });
+
+    inputIsNotEmpty();
+
 });
+
+
+
+
+function inputIsNotEmpty() {
+    // Add class to form elements when blurred if they contain content.
+    $(".field-container input, .field-container textarea").on("blur", function() {
+        var el = $(this);
+        var value = el.val().length;
+        if (value > 0) {
+           el.addClass("active-input");
+        } else {
+           el.removeClass("active-input");
+       }
+    });
+    // Blur all form fields on function call to ensure correct handling on
+    // page load.
+    $(".field-container input, .field-container textarea").blur();
+}
