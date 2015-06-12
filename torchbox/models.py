@@ -744,7 +744,7 @@ class WorkIndexPage(Page):
         works = WorkPage.objects.filter(
             live=True,
             path__startswith=self.path
-        )
+        ).order_by('-pk')
 
         return works
 
